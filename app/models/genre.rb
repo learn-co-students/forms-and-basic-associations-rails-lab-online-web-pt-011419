@@ -1,3 +1,4 @@
 class Genre < ActiveRecord::Base
-  # add associations
+  validates :content, presence: true
+  belongs_to :song 
 end
