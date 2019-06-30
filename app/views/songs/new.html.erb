@@ -4,7 +4,13 @@
   <%= f.label :title %>
   <%= f.text_field :title %>
   <br />
-
+  <%f.label :song_artist_name%>
+  <%= f.text_field :song_artist_name, list: "artists_autocomplete"%>
+      <datalist id="artists_autocomplete">
+          <% Artist.all.each do |artist| %>
+              <option value="<%=artist.name%>">
+          <% end %>
+      </datalist>
   <%= f.submit %>
 <% end %>
 
